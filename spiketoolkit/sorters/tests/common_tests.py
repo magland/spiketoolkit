@@ -41,12 +41,13 @@ class SorterCommonTestSuite:
         
         params = self.SorterClass.default_params()
         
-        for parallel in [False, True]:
-            sorter = self.SorterClass(recording=recording, output_folder=None,
-                                      grouping_property='group', parallel=parallel, debug=False)
-            sorter.set_params(**params)
-            sorter.run()
-            sorting = sorter.get_result()
+        # for parallel in [False, True]:
+        parallel=False
+        sorter = self.SorterClass(recording=recording, output_folder=None,
+                                  grouping_property='group', parallel=parallel, debug=False)
+        sorter.set_params(**params)
+        sorter.run()
+        sorting = sorter.get_result()
             
         
     
